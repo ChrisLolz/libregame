@@ -14,17 +14,17 @@ func _process(delta):
 		velocity.x +=1
 	if Input.is_action_pressed("move_left"):
 		velocity.x -=1
-		
-	if velocity.length() > 0:
+	
+	$AnimatedSprite2D.play()
+	if velocity.length() > 0: 
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()	
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+	else:
+		$AnimatedSprite2D.animation = "default"
 	
 	position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screen_size)
