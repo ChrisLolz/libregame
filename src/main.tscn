@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://8ve362g08duy"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_b24t5"]
+[ext_resource type="Texture2D" uid="uid://clpyrs5f8fg01" path="res://assets/spritesheet1.png" id="2_4ceys"]
+[ext_resource type="Texture2D" uid="uid://bmawy6s125dp0" path="res://assets/background.png" id="3_6b6ug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4gfd"]
+atlas = ExtResource("2_4ceys")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxf6h"]
+atlas = ExtResource("2_4ceys")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3wya"]
+atlas = ExtResource("2_4ceys")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7duu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4gfd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxf6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4gfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3wya")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyuef"]
+size = Vector2(10, 16)
+
+[node name="Main" type="Node"]
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(10, 344)
+scale = Vector2(2, 2)
+script = ExtResource("1_b24t5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_y7duu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -3.05176e-05)
+shape = SubResource("RectangleShape2D_cyuef")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -82)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(320, 180)
+texture = ExtResource("3_6b6ug")
