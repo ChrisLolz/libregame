@@ -11,15 +11,17 @@ func _ready():
 func _process(delta):
 	if not is_on_floor():
 		velocity.y += gravity*delta
+		$AnimatedSprite2D.play("jump")
 		
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-		$AnimatedSprite2D.play("walk")
-	else:
+		if is_on_floor():
+			$AnimatedSprite2D.play("walk")
+	elif is_on_floor():
 		$AnimatedSprite2D.play("default")
-		
+	
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == 1:
 		$AnimatedSprite2D.flip_h = false
