@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://8ve362g08duy"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_b24t5"]
 [ext_resource type="Texture2D" uid="uid://clpyrs5f8fg01" path="res://assets/spritesheet1.png" id="2_4ceys"]
+[ext_resource type="Script" path="res://src/Player.gd" id="2_bacl8"]
 [ext_resource type="Texture2D" uid="uid://bmawy6s125dp0" path="res://assets/background.png" id="3_6b6ug"]
 [ext_resource type="Texture2D" uid="uid://bgkt3deqgqap1" path="res://assets/jump.png" id="4_rdjlg"]
 
@@ -76,7 +76,7 @@ texture = ExtResource("3_6b6ug")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(10, 344)
-script = ExtResource("1_b24t5")
+script = ExtResource("2_bacl8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1

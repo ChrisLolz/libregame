@@ -22,7 +22,7 @@ func _process(delta):
 	elif is_on_floor():
 		$AnimatedSprite2D.play("default")
 	
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("move_left", "move_right")
 	if direction == 1:
 		$AnimatedSprite2D.flip_h = false
 	elif direction == -1:
