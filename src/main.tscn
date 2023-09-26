@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8ve362g08duy"]
+[gd_scene load_steps=10 format=3 uid="uid://8ve362g08duy"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_b24t5"]
 [ext_resource type="Texture2D" uid="uid://clpyrs5f8fg01" path="res://assets/spritesheet1.png" id="2_4ceys"]
@@ -44,25 +44,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyuef"]
 size = Vector2(10, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_traey"]
+size = Vector2(1280, 4)
+
 [node name="Main" type="Node"]
-
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(10, 344)
-scale = Vector2(2, 2)
-script = ExtResource("1_b24t5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_y7duu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -3.05176e-05)
-shape = SubResource("RectangleShape2D_cyuef")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -82)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -73,3 +58,36 @@ motion_mirroring = Vector2(640, 0)
 texture_filter = 1
 position = Vector2(320, 180)
 texture = ExtResource("3_6b6ug")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(10, 344)
+script = ExtResource("1_b24t5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_y7duu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_cyuef")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+texture_filter = 1
+position = Vector2(0, -164)
+scale = Vector2(2, 2)
+limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(10, 362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(630, 0)
+shape = SubResource("RectangleShape2D_traey")

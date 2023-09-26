@@ -1,30 +1,37 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 200
-var screen_size
+const SPEED = 200
+const JUMP_VELOCITY = -400
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
+	$AnimatedSprite2D.play("default")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		velocity.x +=1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -=1
-	
-	$AnimatedSprite2D.play()
-	if velocity.length() > 0: 
-		velocity = velocity.normalized() * speed
-	
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+	if not is_on_floor():
+		velocity.y += gravity*delta
+		
+	if Input.is_action_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		$AnimatedSprite2D.play("walk")
 	else:
-		$AnimatedSprite2D.animation = "default"
+		$AnimatedSprite2D.play("default")
+		
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction == 1:
+		$AnimatedSprite2D.flip_h = false
+	elif direction == -1:
+		$AnimatedSprite2D.flip_h = true
+		
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	position += velocity * delta
+	move_and_slide()
+	#position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screen_size)
+
