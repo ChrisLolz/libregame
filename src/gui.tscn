@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://d02ti2kp18of"]
+
+[ext_resource type="Texture2D" uid="uid://b1p7i4fk2qi75" path="res://assets/old_paper_paper_1_1_800x500.png" id="1_krovr"]
+[ext_resource type="Script" path="res://src/gui.gd" id="1_xo3xk"]
+
+[sub_resource type="Theme" id="Theme_ta2wl"]
+default_font_size = 9
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04sik"]
+texture = ExtResource("1_krovr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_b144p"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qkar"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ta2wl")
+script = ExtResource("1_xo3xk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_left = 563.0
+offset_top = 230.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_04sik")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 566.0
+offset_top = 250.0
+offset_right = 618.0
+offset_bottom = 266.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_b144p")
+
+[node name="checklist" type="Label" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 231.0
+offset_right = 629.0
+offset_bottom = 251.0
+text = "Checklist"
+label_settings = SubResource("LabelSettings_5qkar")

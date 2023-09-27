@@ -14,6 +14,10 @@ config/name="LibreGameFest"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Player="*res://src/playerstate.gd"
+
 [display]
 
 window/size/viewport_width=640
