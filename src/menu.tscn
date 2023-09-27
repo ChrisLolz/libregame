@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://db8nu11nn5ebt"]
+
+[ext_resource type="Script" path="res://src/menu.gd" id="1_qla1w"]
+[ext_resource type="Texture2D" uid="uid://0m647qa0l18g" path="res://assets/menu bg.png" id="2_ofcoi"]
+[ext_resource type="Texture2D" uid="uid://dd45oc75ia31p" path="res://assets/logo.png" id="3_mdoic"]
+[ext_resource type="Texture2D" uid="uid://b2vfkq2pbdh0" path="res://assets/quit button.png" id="3_r5dfl"]
+[ext_resource type="Texture2D" uid="uid://dimhhelxgbtic" path="res://assets/quit button red.png" id="4_1ppyk"]
+[ext_resource type="Texture2D" uid="uid://dm7mpo4gr2bfa" path="res://assets/play button.png" id="4_kw4o1"]
+[ext_resource type="Texture2D" uid="uid://dd7schykbbuot" path="res://assets/play button red.png" id="6_85cet"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_qla1w")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(320, 179)
+texture = ExtResource("2_ofcoi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(306, 85)
+scale = Vector2(0.784375, 0.683333)
+texture = ExtResource("3_mdoic")
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 255.0
+offset_top = 217.0
+offset_right = 355.0
+offset_bottom = 277.0
+texture_normal = ExtResource("3_r5dfl")
+texture_hover = ExtResource("4_1ppyk")
+
+[node name="Play" type="TextureButton" parent="."]
+offset_left = 255.0
+offset_top = 129.0
+offset_right = 355.0
+offset_bottom = 189.0
+texture_normal = ExtResource("4_kw4o1")
+texture_hover = ExtResource("6_85cet")
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
