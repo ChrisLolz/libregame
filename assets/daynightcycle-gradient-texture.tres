@@ -1,0 +1,10 @@
+[gd_resource type="GradientTexture1D" load_steps=2 format=3 uid="uid://bb2vp1dch02n0"]
+
+[sub_resource type="Gradient" id="Gradient_faefq"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.208301, 0.379708, 0.526946, 0.599539, 0.678709, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.150573, 0.138551, 0.288288, 1, 0.428431, 0.193332, 0.564388, 1, 0.868159, 0.284233, 0.177661, 1, 0.92477, 0.426667, 0.114947, 1, 1, 0.702986, 0.700839, 1, 1, 1, 1, 1)
+
+[resource]
+gradient = SubResource("Gradient_faefq")
+width = 2048
