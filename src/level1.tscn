@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dwnjybbtenvqv" path="res://assets/plants pack/plants.png" id="7_3ntdb"]
 [ext_resource type="Texture2D" uid="uid://7ao5vd5gn185" path="res://assets/Tileset.png" id="8_8p4ye"]
 [ext_resource type="Texture2D" uid="uid://beqww1btnfrdf" path="res://assets/Decors.png" id="9_kp25d"]
-[ext_resource type="Texture2D" uid="uid://dsvm1odfpfy4x" path="res://assets/light.png" id="10_65v7x"]
 [ext_resource type="Script" path="res://src/CanvasModulate.gd" id="10_oixtl"]
 [ext_resource type="Texture2D" uid="uid://bb2vp1dch02n0" path="res://assets/daynightcycle-gradient-texture.tres" id="11_d0wbw"]
+[ext_resource type="Texture2D" uid="uid://bel68prtax46s" path="res://assets/light.png" id="13_oy6ek"]
 [ext_resource type="AudioStream" uid="uid://cl2msx3qk1vvp" path="res://assets/Forest_Day.wav" id="14_4ukmo"]
 [ext_resource type="PackedScene" uid="uid://d02ti2kp18of" path="res://src/gui.tscn" id="15_f6psu"]
 
@@ -479,6 +479,7 @@ script = ExtResource("5_ghh0u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_07ar6")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -6.10352e-05)
@@ -495,7 +496,7 @@ position_smoothing_speed = 10.0
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
 energy = 0.5
-texture = ExtResource("10_65v7x")
+texture = ExtResource("13_oy6ek")
 texture_scale = 0.2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
