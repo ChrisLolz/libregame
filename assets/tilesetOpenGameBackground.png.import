@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://byjdpb88fgior"
+path="res://.godot/imported/tilesetOpenGameBackground.png-a9f431c4159f933bbcbe31760bd057fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/tilesetOpenGameBackground.png"
+dest_files=["res://.godot/imported/tilesetOpenGameBackground.png-a9f431c4159f933bbcbe31760bd057fd.ctex"]
 
 [params]
 

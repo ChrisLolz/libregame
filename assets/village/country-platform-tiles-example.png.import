@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://cbf3jsbkf0jcq"
+path="res://.godot/imported/country-platform-tiles-example.png-1b550297872b3f0aeed4fde86fa2db07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/village/country-platform-tiles-example.png"
+dest_files=["res://.godot/imported/country-platform-tiles-example.png-1b550297872b3f0aeed4fde86fa2db07.ctex"]
 
 [params]
 

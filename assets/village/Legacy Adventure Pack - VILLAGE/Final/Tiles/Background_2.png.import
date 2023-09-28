@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://o4bgh7e445o7"
+path="res://.godot/imported/Background_2.png-729779938620ac889d4d4934e06f1995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/village/Legacy Adventure Pack - VILLAGE/Final/Tiles/Background_2.png"
+dest_files=["res://.godot/imported/Background_2.png-729779938620ac889d4d4934e06f1995.ctex"]
 
 [params]
 

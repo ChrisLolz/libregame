@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://cxpbmkhvjwr31"
+path="res://.godot/imported/Test_3.png-8ce57104d23528a5870c7607ee3686b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/village/Legacy Adventure Pack - VILLAGE/Final/Social/Test_3.png"
+dest_files=["res://.godot/imported/Test_3.png-8ce57104d23528a5870c7607ee3686b3.ctex"]
 
 [params]
 

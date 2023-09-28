@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://c72q0ej016qqs"
+path="res://.godot/imported/trees-and-bushes.png-a79d7e4cf97babe63a363ce5e0aaf873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/village/trees_and_bushes_pack/trees_and_bushes_pack/trees-and-bushes.png"
+dest_files=["res://.godot/imported/trees-and-bushes.png-a79d7e4cf97babe63a363ce5e0aaf873.ctex"]
 
 [params]
 

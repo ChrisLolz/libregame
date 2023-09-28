@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvm1odfpfy4x"
-path="res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"
+uid="uid://cv1vsaflnhjbi"
+path="res://.godot/imported/summer_pine_tree_tiles.png-f8eeee9c0bd1c6b3a7783f0f89be30a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=["res://.godot/imported/light.png-87539b10c4b4cebc046b6b91ffea6f69.ctex"]
+source_file="res://assets/village/summer_pine_tree_tiles.png"
+dest_files=["res://.godot/imported/summer_pine_tree_tiles.png-f8eeee9c0bd1c6b3a7783f0f89be30a4.ctex"]
 
 [params]
 
