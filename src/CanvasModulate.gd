@@ -37,6 +37,9 @@ func _recalculate_time():
 	
 	if hour >= 24 or hour < 6:
 		time = 0
+		get_node("/root/level1/day").stop()
+		if get_node("/root/level1/night").is_playing() == false:
+			get_node("/root/level1/night").play()
 	
 	if past_minute != minute:
 		past_minute = minute

@@ -41,10 +41,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://oldman_script.dialogue"), "start")
 			return
-	
-
 
 func _on_detection_area_body_entered(body):
+	print(body)
 	if body.has_method("old_man"):
 		old_man_in_range = true
 
@@ -52,3 +51,7 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("old_man"):
 		old_man_in_range = false
+
+func _on_area_2d_body_entered(body):
+	if body.name == "CharacterBody2D":
+		get_tree().change_scene_to_file("res://src/level1.tscn")
