@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8ve362g08duy"]
+[gd_scene load_steps=14 format=3 uid="uid://8ve362g08duy"]
 
 [ext_resource type="Texture2D" uid="uid://clpyrs5f8fg01" path="res://assets/spritesheet1.png" id="2_4ceys"]
 [ext_resource type="Script" path="res://src/Player.gd" id="2_bacl8"]
@@ -53,6 +53,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyuef"]
 size = Vector2(10, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkjgt"]
+radius = 17.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_traey"]
 size = Vector2(1280, 4)
 
@@ -97,6 +100,11 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="detection_area" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/detection_area"]
+shape = SubResource("CircleShape2D_mkjgt")
+
 [node name="InvisibleWalls" type="StaticBody2D" parent="."]
 position = Vector2(10, 362)
 
@@ -111,3 +119,6 @@ shape = SubResource("RectangleShape2D_uqcbb")
 [node name="RightWall" type="CollisionShape2D" parent="InvisibleWalls"]
 position = Vector2(1274.5, -182.5)
 shape = SubResource("RectangleShape2D_n4hk7")
+
+[connection signal="body_entered" from="CharacterBody2D/detection_area" to="CharacterBody2D" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/detection_area" to="CharacterBody2D" method="_on_detection_area_body_exited"]

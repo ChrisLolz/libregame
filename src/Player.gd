@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 200
 const JUMP_VELOCITY = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var old_man_in_range = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
@@ -36,4 +36,19 @@ func _physics_process(delta):
 	move_and_slide()
 	#position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screen_size)
+	
+	if old_man_in_range == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://oldman_script.dialogue"), "start")
+			return
+	
 
+
+func _on_detection_area_body_entered(body):
+	if body.has_method("old_man"):
+		old_man_in_range = true
+
+
+func _on_detection_area_body_exited(body):
+	if body.has_method("old_man"):
+		old_man_in_range = false

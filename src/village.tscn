@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3ksfg1yddtxt"]
+[gd_scene load_steps=26 format=3 uid="uid://c3ksfg1yddtxt"]
 
 [ext_resource type="Script" path="res://src/village.gd" id="1_j3778"]
 [ext_resource type="Texture2D" uid="uid://bs85cdsj4n41t" path="res://assets/village/country-platform-back.png" id="2_dxsc6"]
@@ -6,11 +6,90 @@
 [ext_resource type="Texture2D" uid="uid://c3oexsp7qnn1v" path="res://assets/village/country-platform-forest.png" id="4_m0ex5"]
 [ext_resource type="Texture2D" uid="uid://cv1vsaflnhjbi" path="res://assets/village/summer_pine_tree_tiles.png" id="5_vyrns"]
 [ext_resource type="Texture2D" uid="uid://bejokdyto871y" path="res://assets/maison set 2.png" id="6_gsbem"]
+[ext_resource type="Texture2D" uid="uid://dfbtwwtcnsv4r" path="res://assets/NPC_Characters_v1.0/Male3.png" id="7_j0c5l"]
+
+[sub_resource type="GDScript" id="GDScript_ija56"]
+script/source = "extends CharacterBody2D
+
+func old_man():
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmim6"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(0, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30l2v"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(32, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtb4"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(64, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81qlk"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(96, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_046ur"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(128, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftjvt"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twpc2"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(192, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og526"]
+atlas = ExtResource("7_j0c5l")
+region = Rect2(224, 288, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aaxy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmim6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30l2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81qlk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_046ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftjvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twpc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og526")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mucc"]
+size = Vector2(15, 33)
 
 [sub_resource type="GDScript" id="GDScript_vc61w"]
 script/source = "extends ParallaxBackground
 
-var scrolling_speed = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +98,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	scroll_offset.x -= scrolling_speed * delta
+	pass
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36k4e"]
@@ -4994,6 +5073,20 @@ sources/0 = SubResource("TileSetAtlasSource_tth7c")
 
 [node name="Village" type="Node2D"]
 script = ExtResource("1_j3778")
+
+[node name="old_man" type="CharacterBody2D" parent="."]
+position = Vector2(281, 342)
+script = SubResource("GDScript_ija56")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old_man"]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_aaxy0")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="old_man"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_7mucc")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = SubResource("GDScript_vc61w")
