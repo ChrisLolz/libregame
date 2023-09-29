@@ -1,0 +1,19 @@
+~ start
+
+if Global.meet_old_man == true:
+	Oldman: Hey there <MC> it's been a while
+	- How are you?
+		Oldman: Strange things keep occuring at night round' here..
+	- I'm looking for my family
+		Oldman: They were here a week ago, but left for a cabin round' the forest.
+		Oldman: Before you go look for em' I suggest you learn a couple o' tings
+		Oldman: Use you left and right arrow key to move left and right
+		Oldman: Out in the forest there are flowers you can collect, it may lead you to your family..
+		- Thanks for the advice
+		=> END
+
+
+
+
+
+=> END
